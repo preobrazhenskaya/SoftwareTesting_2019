@@ -1,20 +1,20 @@
 package ru.beru;
 
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
 public class Settings {
     public WebDriver driver;
 
-    @Before
+    @BeforeMethod
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "/Users/yanochka/IdeaProjects/chromedriver");
         driver = new ChromeDriver();
@@ -22,9 +22,9 @@ public class Settings {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @After
+    @AfterMethod
     public void close() {
-        //driver.quit();
+        driver.quit();
     }
 
     public void goToBeru() {

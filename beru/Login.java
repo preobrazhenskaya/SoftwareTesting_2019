@@ -1,8 +1,8 @@
 package ru.beru;
 
-import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.*;
 
 public class Login extends Account {
     @Test
