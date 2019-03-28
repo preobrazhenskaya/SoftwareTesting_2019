@@ -6,12 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-public class Settings {
+public class Settings extends HighlightElement {
     public WebDriver driver;
 
     @BeforeMethod
@@ -35,6 +34,12 @@ public class Settings {
         /* Закрытие рекламы */
         WebElement closeAds = (new WebDriverWait(driver, 5))
                 .until(ExpectedConditions.presenceOfElementLocated(By.className("_1ZYDKa22GJ")));
+        highlighter(driver, closeAds);
         closeAds.click();
+    }
+
+    @DataProvider(name = "City")
+    public static Object[] cities() {
+        return new Object[] {"Хвалынск"};
     }
 }
