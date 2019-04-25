@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="suite">
+    <test name="TestLogin">
+        <classes>
+            <class name="ru.beru.Login"/>
+        </classes>
+    </test>
+    <test name="City">
+        <parameter name="cityName" value="Хвалынск"/>
+        <classes>
+            <class name="ru.beru.City"/>
+        </classes>
+    </test>
+    <test name="TestToothbrush">
+        <classes>
+            <class name="ru.beru.Toothbrush"/>
+        </classes>
+    </test>
+</suite>

@@ -1,26 +1,25 @@
 package ru.beru;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class Login extends Account {
+public class Login extends Settings {
     @Test
     public void loginTest() {
+        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
 
-        /* Переходим на сайт и закрываем рекламу */
-        goToBeru();
-
-        /* Вход в аккаунт */
-        logIn();
+        /* Авторизация на сайте */
+        homePage.clickAccountButton();
+        loginPage.enterLogin();
+        loginPage.clickPasswordButton();
+        loginPage.enterPassword();
+        loginPage.signIn();
 
         /* Проверяем сменилась ли надпись "Войти в аккаунт" на "Мой профиль" */
-        WebElement account = driver.findElement(By.className("header2-nav__user"));
-        String acc_text = account.getText();
-        Assert.assertEquals(acc_text, "Мой профиль");
+        homePage.checkAccountText();
 
         /* Возвращаем систему в исходное состояние */
-        logOut();
+        homePage.openAccount();
+        homePage.logOut();
     }
 }
