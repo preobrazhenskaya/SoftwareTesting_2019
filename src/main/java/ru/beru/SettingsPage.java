@@ -10,6 +10,8 @@ public class SettingsPage {
     private WebDriver driver;
     private WebElement firstCityValue;
     private WebElement secondCityValue;
+    private WebElement accountButton;
+    private WebElement exitButton;
 
     public SettingsPage(WebDriver driver) {
         this.driver = driver;
@@ -25,5 +27,17 @@ public class SettingsPage {
                 "//span[contains(@class, 'link__inner')]"));
         String secondCityValueStr = secondCityValue.getText();
         Assert.assertEquals(firstCityValueStr, secondCityValueStr);
+    }
+
+    @Step("Open account menu")
+    public void openAccount() {
+        accountButton = driver.findElement(By.className("header2-nav__user"));
+        accountButton.click();
+    }
+
+    @Step("Logout")
+    public void logOut() {
+        exitButton = driver.findElement(By.xpath("//a[text() = 'Выход']"));
+        exitButton.click();
     }
 }

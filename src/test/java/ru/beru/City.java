@@ -33,7 +33,7 @@ public class City extends Settings {
         settingsPage.checkCityEquality();
 
         /* Возвращаем систему в исходное состояние */
-        homePage.openAccount();
-        homePage.logOut();
+        settingsPage.openAccount();
+        settingsPage.logOut();
     }
 }

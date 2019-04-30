@@ -6,7 +6,7 @@ import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-public class Settings extends HighlightElement {
+public class Settings {
     public WebDriver driver;
 
     @BeforeMethod
