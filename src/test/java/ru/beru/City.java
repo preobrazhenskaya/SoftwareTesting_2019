@@ -31,9 +31,5 @@ public class City extends Settings {
 
         /* Проверка совпадения городов */
         settingsPage.checkCityEquality();
-
-        /* Возвращаем систему в исходное состояние */
-        settingsPage.openAccount();
-        settingsPage.logOut();
     }
 }

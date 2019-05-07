@@ -2,6 +2,7 @@ package ru.beru;
 
 import org.testng.annotations.*;
 
+@Listeners({TestListener.class})
 public class Login extends Settings {
     @Test
     public void loginTest() {
@@ -17,9 +18,5 @@ public class Login extends Settings {
 
         /* Проверяем сменилась ли надпись "Войти в аккаунт" на "Мой профиль" */
         homePage.checkAccountText();
-
-        /* Возвращаем систему в исходное состояние */
-        homePage.openAccount();
-        homePage.logOut();
     }
 }

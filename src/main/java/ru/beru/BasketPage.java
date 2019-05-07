@@ -2,6 +2,7 @@ package ru.beru;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -33,7 +34,7 @@ public class BasketPage {
         try {
             new WebDriverWait(driver, 10).until(ExpectedConditions.
                             visibilityOfAllElementsLocatedBy(By.xpath("//span[text()='бесплатно']")));
-        } catch (Exception e) {
+        } catch (TimeoutException e) {
             new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By
                     .xpath("//span[contains(@class, '_2w0qPDYwej') and contains(text(), 'Применить')]")));
         }

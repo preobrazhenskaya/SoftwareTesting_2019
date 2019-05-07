@@ -42,6 +42,12 @@ public class HomePage {
         Assert.assertEquals(accountText, "Мой профиль");
     }
 
+    public boolean checkLoggedIn() {
+        accountButton = driver.findElement(By.className("header2-nav__user"));
+        String accountText = accountButton.getText();
+        return accountText.equals("Мой профиль");
+    }
+
     @Step("Open account menu")
     public void openAccount() {
         accountButton = driver.findElement(By.className("header2-nav__user"));
