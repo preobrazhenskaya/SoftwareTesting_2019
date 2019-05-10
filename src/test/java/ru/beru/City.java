@@ -1,8 +1,9 @@
 package ru.beru;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
+@Listeners({TestListener.class})
 public class City extends Settings {
     @Test(dataProvider = "City")
     public void cityTest (String cityName) {

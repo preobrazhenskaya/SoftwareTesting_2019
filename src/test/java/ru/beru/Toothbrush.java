@@ -1,7 +1,9 @@
 package ru.beru;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners({TestListener.class})
 public class Toothbrush extends Settings {
     @Test
     public void toothBrushTest () {
